@@ -1,6 +1,7 @@
-package com.xzq.springcloud.service;
+package com.example.demo.service;
 
-import com.xzq.springcloud.entities.CommonResult;
+
+import entities.CommonResult;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.GetMapping;

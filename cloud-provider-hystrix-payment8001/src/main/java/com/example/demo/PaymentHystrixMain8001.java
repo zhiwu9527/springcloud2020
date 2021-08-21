@@ -1,4 +1,4 @@
-package com.xzq.springcloud;
+package com.example.demo;
 
 import com.netflix.hystrix.contrib.metrics.eventstream.HystrixMetricsStreamServlet;
 import org.springframework.boot.SpringApplication;
@@ -23,7 +23,7 @@ public class PaymentHystrixMain8001 {
     }
 
     /**
-     * 此配置是为了服务监控而配置，与服务容错本身无观，springCloud 升级之后的坑
+     * 此配置是为了服务监控而配置，与服务容错本身无关，springCloud 升级之后的坑
      * ServletRegistrationBean因为springboot的默认路径不是/hystrix.stream
      * 只要在自己的项目中配置上下面的servlet即可
      *

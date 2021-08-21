@@ -1,4 +1,4 @@
-package com.xzq.springcloud.service;
+package com.example.demo.service;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.stereotype.Component;
@@ -12,9 +12,8 @@ import org.springframework.web.bind.annotation.PathVariable;
  * @create: 2020/3/8 17:00
  **/
 @Component
-@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT",fallback = PaymentFallbackService.class)
+@FeignClient(value = "CLOUD-PROVIDER-HYSTRIX-PAYMENT", fallback = PaymentFallbackService.class)
 public interface PaymentHystrixService {
-
 
     /**
      * 正常访问

@@ -1,7 +1,8 @@
-package com.xzq.springcloud.controller;
+package com.example.demo.controller;
 
-import com.xzq.springcloud.entities.CommonResult;
-import com.xzq.springcloud.service.PaymentFeignService;
+
+import com.example.demo.service.PaymentFeignService;
+import entities.CommonResult;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

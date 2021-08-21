@@ -1,10 +1,12 @@
 package com.example.demo.controller;
 
 import com.example.demo.service.PaymentService;
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -16,6 +18,7 @@ import javax.annotation.Resource;
 
 @RestController
 @Slf4j
+@RequestMapping("/payment")
 public class PaymentController {
 
     @Resource
@@ -50,4 +53,18 @@ public class PaymentController {
         return result;
     }
 
+
+    /**
+     * 服务熔断
+     *
+     * @param id
+     * @return
+     */
+    @GetMapping("/circuit/{id}")
+    @HystrixCommand
+    public String paymentCircuitBreaker(@PathVariable("id") Integer id) {
+        String result = paymentService.paymentCircuitBreaker(id);
+        log.info("***result:" + result);
+        return result;
+    }
 }
